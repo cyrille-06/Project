@@ -10,7 +10,10 @@ $paintings = $paintingModel->getAll();
 <head>
     <meta charset="UTF-8">
     <title>Paintings List</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
+
 </head>
 <body>
     <h1>Paintings</h1>
@@ -22,7 +25,6 @@ $paintings = $paintingModel->getAll();
             <th>Artist</th>
             <th>Width</th>
             <th>Height</th>
-            <th>Actions</th>
         </tr>
         <?php foreach ($paintings as $painting): ?>
         <tr>

@@ -1,48 +1,30 @@
 <?php
-namespace App\Models;
 
-/**
- * Class Database pour gérer données 
-
- * Cette classe gère la connexion à une base de données MySQL en utilisant PDO
- */
 class Database {
-    /**
-     * @var \PDO|null Connexion à la base de données
-     */
-    private $conn;
+    private $host = "localhost";    
+    private $dbname = "gallery"; 
+    private $username = "root";     
+    private $password = "";         
+    private $pdo;                   
 
-    /**
-
-     * @throws \PDOException Si la connexion échoue
-     */
-    public function __construct() {
-        // Chargement du fichier de configuration contenant les informations de connexion
-        $config = require __DIR__ . '/../../config/config.php';
-
+    // Constructeur : Établir la connexion à la base de données
+    public function __construct() { 
         try {
-            // Création d'une connexion PDO avec les paramètres extraits de la configuration
-            $this->conn = new \PDO(
-                "mysql:host={$config['host']};dbname={$config['dbname']}",
-                $config['user'],
-                $config['password']
-            );
+            $dsn = "mysql:host=" . $this->host . ";dbname=" . $this->dbname . ";charset=utf8";
+            $this->pdo = new PDO($dsn, $this->username, $this->password);
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+            $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC); 
 
-            // Configuration du mode d'erreur pour lever des exceptions en cas de problème
-            $this->conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-
-        } catch (\PDOException $e) {
-            // En cas d'erreur de connexion, affichage d'un message et arrêt du script
-            die("Connection failed: " . $e->getMessage());
+        } catch (PDOException $e) {
+            die("Database connection failed: " . $e->getMessage());
+             
         }
     }
 
-    /**
-     * Retourne la connexion à la base de données
-     * 
-     * @return \PDO Connexion active à la base de données
-     */
+    // Fonction pour récupérer la connexion PDO
     public function getConnection() {
-        return $this->conn;
+        return $this->pdo;
     }
 }
+
+?>

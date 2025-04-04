@@ -11,7 +11,7 @@ class Painting {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function add($title, $year, $artist, $width, $height) {
+    public function create($title, $year, $artist, $width, $height) {
         $stmt = $this->pdo->prepare("INSERT INTO paintings (title, year, artist_name, width, height) VALUES (?, ?, ?, ?, ?)");
         return $stmt->execute([$title, $year, $artist, $width, $height]);
     }
@@ -31,5 +31,7 @@ class Painting {
         $stmt = $this->pdo->prepare("DELETE FROM paintings WHERE id_painting = ?");
         return $stmt->execute([$id]);
     }
+
 }
+
 ?>

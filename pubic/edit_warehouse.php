@@ -1,22 +1,37 @@
 <?php
-require '../autoload.php';
-use App\Models\Database;
-use App\Controllers\WarehouseController;
+require_once '../src/Models/Database.php';
+require_once '../src/Models/Warehouse.php';
 
-$db = (new Database())->getConnection();
-$controller = new WarehouseController($db);
+$db = new Database();
+$pdo = $db->getConnection();
+$warehouse = new Warehouse($pdo);
 
-if (!isset($_GET['id'])) {
-    die("Warehouse ID required.");
+$id = $_GET['id'] ?? null;
+
+if (!$id) {
+    echo "Invalid ID.";
+    exit();
 }
 
-$id = $_GET['id'];
-$warehouse = $controller->get($id);
+$currentWarehouse = $warehouse->getById($id);
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $controller->update($id, $_POST['name'], $_POST['address']);
-    header("Location: warehouses.php");
+
+if (!$currentWarehouse) {
+    echo "Warehouse not found.";
     exit();
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['name'] ?? '';
+    $address = $_POST['address'] ?? '';
+
+    if (!empty($name)) {
+        $warehouse->update($id, $name, $address);
+        header("Location: warehouses.php");
+        exit();
+    } else {
+        $error = "Name is required.";
+    }
 }
 ?>
 
@@ -24,14 +39,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> Edit Warehouse </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Warehouse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <h1>Edit Warehouse</h1>
+    <h2>
+        Edit Warehouse
+    </h2>
+    <?php if (!empty($error)) : ?>
+        <p class="error"><?= $error ?></p>
+    <?php endif; ?>
     <form method="POST">
-        Name: <input type="text" name="name" value="<?= $warehouse['name'] ?>" required><br>
-        Address: <input type="text" name="address" value="<?= $warehouse['address'] ?>"><br>
-        <button type="submit">Update</button>
+        <label>Name:</label>
+        <input type="text" name="name" value="<?=htmlspecialchars($currentWarehouse['name']) ?>" required>
+        <label>Address:</label>
+        <input type="text" name="address" value="<?= htmlspecialchars($currentWarehouse['address']) ?>">
+        <button type="submit">Update Warehouse</button>
     </form>
+    <br>
+    <a href="warehouses.php">Back to warehouses</a>
+
+    
 </body>
 </html>

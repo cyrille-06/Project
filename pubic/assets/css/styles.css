@@ -2,35 +2,39 @@ body {
     font-family: 'Lato', sans-serif;
     background-color: #FFFFFF;
     color: #4E598C;
+    text-align: center;
 }
 
-h1 {
-    color: #4E598C;
+form {
+    max-width: 300px;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #4E598C;
+    border-radius: 5px;
+    background: #FFFFFF;
+}
+
+input {
+    width: 90%; 
+    padding: 6px;
+    margin: 5px 0;
+    font-size: 14px;
+    border: 1px solid #4E598C;
+    border-radius: 4px;
 }
 
 button {
+    width: 100%; 
+    padding: 8px;
+    margin-top: 10px; 
     background-color: #4E598C;
-    color: #FFFFFF;
+    color: white;
     border: none;
-    padding: 10px;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 14px;
 }
 
 button:hover {
-    background-color: #3a4774;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table, th, td {
-    border: 1px solid #4E598C;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
+    background-color: #3A446D;
 }
