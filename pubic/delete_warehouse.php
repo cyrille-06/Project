@@ -7,10 +7,10 @@ require_once '../src/Models/Warehouse.php';
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $id = $_GET['id'];
     
-    // Instancier le modèle Warehouse
+    //  le modèle Warehouse
     $warehouseModel = new Warehouse($pdo);
     
-    // Supprimer l'entrepôt avec l'ID spécifié
+    // Supprimer l'entrepôt avec l'ID 
     $deleted = $warehouseModel->delete($id);
 
     if ($deleted) {
@@ -18,11 +18,11 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         header('Location: warehouses.php');
         exit;
     } else {
-        // Si une erreur s'est produite pendant la suppression
+        // si une erreur s'est produite pendant la suppression
         echo "An error occurred while deleting the warehouse.";
     }
 } else {
-    // Si l'ID n'est pas valide ou absent
+    // si l'ID n'est pas valide ou absent
     echo "Invalid ID.";
 }
 ?>
