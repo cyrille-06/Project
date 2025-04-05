@@ -19,7 +19,7 @@ class Painting {
     public function get($id) {
         $stmt = $this->pdo->prepare("SELECT * FROM paintings WHERE id_painting = ?");
         $stmt->execute([$id]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetch(PDO::FETCH_ASSOC); 
     }
 
     public function update($id, $title, $year, $artist, $width, $height) {
@@ -30,6 +30,12 @@ class Painting {
     public function delete($id) {
         $stmt = $this->pdo->prepare("DELETE FROM paintings WHERE id_painting = ?");
         return $stmt->execute([$id]);
+    }
+
+    public function getById($id){
+        $stmt = $this->pdo->prepare("SELECT * FROM paintings WHERE id_painting=?");
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
 }

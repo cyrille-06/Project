@@ -15,5 +15,10 @@ if($deleted){
     // ce diriger vers la liste des peintures
     header('Location: paintings.php');
     exit;
+}else{
+    echo "error : unable to delete.";
 }
+
+} else{
+    echo "Invalid painting";
 }

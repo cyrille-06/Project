@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title> Art Gallery Administration </title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
     <style>
         body {
     font-family: 'Lato', sans-serif;
@@ -27,11 +29,17 @@ a {
     background-color: #4E598C;
     color: #FFFFFF;
     border-radius: 8px;
-    transition: background 0.3s ease;
 }
 
 a:hover {
-    background-color: #3A446D;
+    background-color: #4E598C;
+}
+footer{
+    margin-top: auto;
+    padding:20px;
+    background-color: #FFFFFF;
+    color: #4E598C;
+    font-size:14px;
 }
 
 
@@ -46,4 +54,7 @@ a:hover {
     <a href="warehouses.php">Manage Warehouses</a>
 
 </body>
+<footer>
+    &copy; <?= date("Y") ?> Art Gallery Admin. All rights reserved.
+</footer>
 </html>

@@ -21,7 +21,7 @@ class Database {
         }
     }
 
-    // Fonction pour récupérer la connexion PDO
+    // Fonction pour récupérer la connexion PDO 
     public function getConnection() {
         return $this->pdo;
     }

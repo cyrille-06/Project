@@ -20,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-var_dump($_POST);
 
 // Vérifier si l'ID de l'entrepôt est dans l'URL et valide
 if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
