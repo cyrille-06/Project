@@ -6,7 +6,7 @@ Application PHP permettant de gérer des peintures stockées dans des entrepôts
 
 ⚙️ Prérequis
 
-PHP 8
+PHP 
 
 MySQL
 
@@ -33,7 +33,7 @@ Créer la base de données :
 Aller sur http://localhost/phpmyadmin
 
 Créer une base gallery
-
+- crée une table paitings et une table warehouse
 
 Configurer la connexion :
 
