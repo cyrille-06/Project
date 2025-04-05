@@ -1,7 +1,7 @@
 
  **Veille Technologique - Projet Galerie **
 
-Nous suivons activement les évolutions des technologies utilisées dans le projet afin d'assurer sa sécurité, sa performance et sa pérennité.
+j'ai suivie les évolutions des technologies utilisées dans le projet afin d'assurer sa sécurité, sa performance et sa pérennité.
 
  **PHP 8+**
 - **Nouvelles fonctionnalités** : Attributs, types d’union, match expression.
