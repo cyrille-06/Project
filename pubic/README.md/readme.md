@@ -1,4 +1,4 @@
-<!-Comment installer mon projet ->
+<!--Comment installer mon projet -->
 
 🎨 Galerie d'Art – Application de Gestion
 
