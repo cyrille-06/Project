@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 05 avr. 2025 à 21:36
+-- Généré le : dim. 06 avr. 2025 à 17:24
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -36,14 +36,44 @@ CREATE TABLE IF NOT EXISTS `paintings` (
   `width` decimal(5,2) DEFAULT NULL,
   `height` decimal(5,2) DEFAULT NULL,
   PRIMARY KEY (`id_painting`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `paintings`
 --
 
 INSERT INTO `paintings` (`id_painting`, `title`, `year`, `artist_name`, `width`, `height`) VALUES
-(3, 'm', 11, 'K', 0.05, 0.05);
+(3, 'm', 11, 'K', 0.05, 0.05),
+(4, 'K', 16, 'K', 0.05, 0.05),
+(5, 'K', 1, 'K', 0.05, 0.05),
+(6, 'boni', 2020, 'KOFFI', 0.24, 0.15);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `storage`
+--
+
+DROP TABLE IF EXISTS `storage`;
+CREATE TABLE IF NOT EXISTS `storage` (
+  `id_painting` int NOT NULL,
+  `id_warehouse` int NOT NULL,
+  PRIMARY KEY (`id_painting`,`id_warehouse`),
+  KEY `id_warehouse` (`id_warehouse`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `storage`
+--
+
+INSERT INTO `storage` (`id_painting`, `id_warehouse`) VALUES
+(3, 7),
+(3, 8),
+(3, 10),
+(4, 8),
+(5, 7),
+(5, 9),
+(6, 7);
 
 -- --------------------------------------------------------
 
@@ -57,7 +87,17 @@ CREATE TABLE IF NOT EXISTS `warehouses` (
   `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_warehouse`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `warehouses`
+--
+
+INSERT INTO `warehouses` (`id_warehouse`, `name`, `address`) VALUES
+(7, 'ange koffi', '39 RUE DU DOCTEUR SUREAU'),
+(8, 'm', 'ioj'),
+(9, 'ange koffi', '39 RUE DU DOCTEUR SUREAU'),
+(10, 'brin', '20 RUE DU DOCTEUR SUREAU');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

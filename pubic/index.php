@@ -14,11 +14,11 @@
     color: #4E598C;
     text-align: center;
     margin: 0;
-    padding: 0;
+    padding: 10px;
 }
 
 h1 {
-    font-weight: 700;
+    font-weight: 700%;
     margin: 20px 0;
 }
 
@@ -38,8 +38,8 @@ a:hover {
 footer{
     margin-top: auto;
     padding:20px;
-    background-color: #FFFFFF;
-    color: #4E598C;
+    background-color: #4E598C;
+    color: #FFFFFF;
     font-size:14px;
 }
 

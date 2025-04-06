@@ -17,9 +17,7 @@ $paintings = $paintingModel->getAll();
     <meta charset="UTF-8">
     <title>Paintings List</title>
     
-    <!-- Lien vers la police Lato depuis Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Dupliqué: Lien vers une autre feuille de style CSS. Cette ligne peut être supprimée -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -28,6 +26,9 @@ $paintings = $paintingModel->getAll();
     
     <!-- Lien vers la page de création d'une nouvelle peinture avec un bouton -->
     <a href="create_painting.php"><button>Add Painting</button></a>
+    
+    <!-- Nouveau bouton pour aller vers la page Assign Painting -->
+    <a href="assign_painting.php"><button>Assign Painting</button></a>
     
     <!-- Tableau pour afficher la liste des peintures -->
     <table>
@@ -38,12 +39,13 @@ $paintings = $paintingModel->getAll();
             <th>Artist</th>
             <th>Width</th>
             <th>Height</th>
+            <th>Actions</th>
         </tr>
         
         <!-- ici c'est la Boucle PHP pour afficher chaque peinture récupérée de la base de données -->
         <?php foreach ($paintings as $painting): ?>
         <tr>
-            <!-- Affichage du titre de la peinture, sécurisé contre les attaques XSS -->
+            <!-- Affichage du titre de la peinture, sécuriser -->
             <td><?= htmlspecialchars($painting['title']) ?></td>
             <!-- Affichage de l'année de la peinture -->
             <td><?= $painting['year'] ?></td>

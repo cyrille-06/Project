@@ -6,7 +6,7 @@ body {
 }
 
 form {
-    max-width: 300px;
+    max-width: 200px;
     margin: auto;
     padding: 10px;
     border: 1px solid #4E598C;
@@ -15,16 +15,18 @@ form {
 }
 
 input {
-    width: 90%; 
-    padding: 6px;
+    
     margin: 5px 0;
     font-size: 14px;
     border: 1px solid #4E598C;
     border-radius: 4px;
+    width: 160px;      /* Définit la largeur de l'input */
+    height: 30px;  
 }
 
 button {
-    width: 100%; 
+    width: 90px; 
+    height: 45px;  
     padding: 8px;
     margin-top: 10px; 
     background-color: #4E598C;

@@ -1,10 +1,10 @@
 <!--Comment installer mon projet -->
 
-🎨 Galerie d'Art – Application de Gestion
+Galerie d'Art – Application de Gestion
 
 Application PHP permettant de gérer des peintures stockées dans des entrepôts : ajout, modification, suppression, affichage.
 
-⚙️ Prérequis
+ Prérequis
 
 PHP 
 
@@ -58,7 +58,7 @@ src/Controllers/ – Logique métier
 
 public/ – Fichiers accessibles via le navigateur
 
-assets/ – CSS 
+assets/ – CSS  /-styles.css
 
 👨‍💼 Auteur
 

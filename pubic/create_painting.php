@@ -37,12 +37,8 @@ if (!empty($title) && !empty($year)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Painting</title>
         <!-- Inclusion de la feuille de styles principale -->
-
-    <link rel="stylesheet" href="assets/css/styles.css">
-
-
-    <!-- Importation de la police Lato depuis Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
@@ -52,23 +48,23 @@ if (!empty($title) && !empty($year)) {
     <!-- Formulaire pour ajouter une nouvelle peinture -->
     <form action="create_painting.php" method="POST">
 
-        <!-- Champ pour le titre (obligatoire) -->
+        <!-- Champ pour le titre -->
         <label>Title:</label>
         <input type="text" name="title" required>
 
-        <!-- Champ pour l'année (obligatoire) -->
+        <!-- Champ pour l'année  -->
         <label>Year:</label>
         <input type="number" name="year" required>
 
-        <!-- Champ pour le nom de l'artiste (facultatif) -->
+        <!-- Champ pour le nom de l'artiste -->
         <label>Artist Name:</label>
         <input type="text" name="artist_name">
 
-        <!-- Champ pour la largeur en cm (facultatif) -->
+        <!-- Champ pour la largeur en cm  -->
         <label>Width (cm):</label>
         <input type="number" step="0.01" name="width">
 
-        <!-- Champ pour la hauteur en cm (facultatif) -->
+        <!-- Champ pour la hauteur en cm -->
         <label>Height (cm):</label>
         <input type="number" step="0.01" name="height">
 
