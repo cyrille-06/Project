@@ -33,7 +33,7 @@ Créer la base de données :
 Aller sur http://localhost/phpmyadmin
 
 Créer une base gallery
-- crée une table paitings et une table warehouse
+- crée une table paintings et une table warehouses
 
 Configurer la connexion :
 
@@ -50,15 +50,15 @@ Accéder à : http://localhost/projet_galerie/pubic/
 
 📁 Structure du projet
 
-config/ – Connexion à la BDD
+config/ config.php – Connexion à la BDD
 
-src/Models/ – Modèles (Peintures, Entrepôts)
+src/Models/ – Modèles (Peintures, Entrepôts, database)
 
 src/Controllers/ – Logique métier
 
 public/ – Fichiers accessibles via le navigateur
 
-assets/ – CSS  /-styles.css
+public /assets/ – CSS  /-styles.css
 
 👨‍💼 Auteur
 
